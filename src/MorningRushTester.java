@@ -24,17 +24,25 @@ public class MorningRushTester
                 gulps = inGulps;
             }
             
+            public int Gulps()
+            {
+                return gulps;
+            }
+            
             public void actionPerformed(ActionEvent event)
             {
                 if (gulps >= 0)
                 {
                     System.out.println(gulps);
-                    --gulps;
                 }
-                if (gulps == 0)
+                else if (gulps == 0)
                 {
                     System.out.println("Go to school");
+                    JOptionPane.showMessageDialog(null, "Make another?");
+                    int initialGulps = 0;
+                    gulps = initialGulps ;
                 }
+                --gulps;
             }
         }
         
